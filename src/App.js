@@ -1,25 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
-
+import NavBar from './Components/NavBar/NavBar';
 function App() {
+  const home_navbar_item = ["Home","Link","Disabled","Tomas"]
+  const dropdown_list = ["XBOX","PLAY_STATION","PC"]
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App text-danger">
+      <NavBar 
+        navbar_items={home_navbar_item} 
+        nombre_logo={'Mercado Libre'}
+        search_bar={false}
+        show_dropdown={true}
+        dropdown_name={'Video Juegos'}
+        dropdown_list={dropdown_list}
+      />
     </div>
   );
 }
 
 export default App;
+
+// App 
+ // Navbar 
+   // NavbarItem
+   // SearchBar 
+   // Dropdown
