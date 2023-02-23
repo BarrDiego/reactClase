@@ -1,26 +1,19 @@
 import './App.css';
-import NavBar from './Components/NavBar/NavBar';
+import Counter from './Components/Counter/Counter';
+
+import Productos from './views/Productos';
 function App() {
-  const home_navbar_item = ["Home","Link","Disabled","Tomas"]
-  const dropdown_list = ["XBOX","PLAY_STATION","PC"]
+  
   return (
     <div className="App text-danger">
-      <NavBar 
-        navbar_items={home_navbar_item} 
-        nombre_logo={'Mercado Libre'}
-        search_bar={false}
-        show_dropdown={true}
-        dropdown_name={'Video Juegos'}
-        dropdown_list={dropdown_list}
-      />
+      <Counter initialNumber = {0}/>
+      <Counter initialNumber = {10}/>
+      <Counter initialNumber = {200}/>
+      <Productos/>
     </div>
   );
 }
 
 export default App;
 
-// App 
- // Navbar 
-   // NavbarItem
-   // SearchBar 
-   // Dropdown
+// TODO: CONTINUAR MINUTO 50:00
