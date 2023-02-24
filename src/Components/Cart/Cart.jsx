@@ -8,7 +8,7 @@ const Cart = (props) => {
     const handleClick = () => alert('hiciste click!')
   return (
     <div className="card" style={{width: '18rem'}}>
-        <img src={img || defaultImg} class="card-img-top" alt="..."/>
+        <img src={img || defaultImg} className="card-img-top" alt="..."/>
         <div className="card-body">
             <h5 className="card-title">{title || 'Default Title'}</h5>
             <p className="card-text">{descripcion || 'Lorem Ipsum'}</p>

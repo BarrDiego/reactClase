@@ -1,5 +1,6 @@
 import './App.css';
 import Counter from './Components/Counter/Counter';
+import { Formulario } from './Components/Forms/Formulario';
 
 import Productos from './views/Productos';
 function App() {
@@ -10,7 +11,17 @@ function App() {
       <Counter initialNumber = {10}/>
       <Counter initialNumber = {200}/>
       <Productos/>
+      <Formulario/>
     </div>
+
+    /*
+    TODO:
+      implementar el formulario
+     
+    
+    */
+   
+    
   );
 }
 
