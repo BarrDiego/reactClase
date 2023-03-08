@@ -1,13 +1,16 @@
 import React from 'react'
-import Navbar from '../Components/Navbar/Navbar'
-import ProductContainer from '../Components/ProductContainer'
+import Navbar from '../components/Navbar/Navbar'
+import ProductContainer from '../components/ProductContainer'
 import Container from '../layout/Container'
+
 const Productos = () => {
+
   const home_navbar_item = ["Home","Link","Disabled","Tomas"]
   const dropdown_list = ["XBOX","PLAY_STATION","PC"]
+
   return (
     <>
-      <Navbar 
+     <Navbar 
         navbar_items={home_navbar_item} 
         nombre_logo={'Mercado Libre'}
         search_bar={false}
@@ -16,10 +19,8 @@ const Productos = () => {
         dropdown_list={dropdown_list}
       />
       <Container dFlex>
-        {/** children del container */}
         <ProductContainer/>
       </Container>
-      
     </>
   )
 }

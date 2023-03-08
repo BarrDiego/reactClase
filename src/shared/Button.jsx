@@ -1,16 +1,15 @@
-import React from 'react'
+import React from "react";
 
-{/* Stateless Component*/}
-const Button = ({className='btn btn-primary', buttonText='Button', onClick, disabled}) => {
+const Button = ({className='btn btn-primary', buttonText="Button", onClick, disabled=false }) => {
   return (
     <button
-        disabled={disabled}
-        onClick={onClick || null}
-        className={className}
+      disabled={disabled}
+      onClick={onClick || null}
+      className={className}
     >
-        {buttonText}
+      { buttonText}
     </button>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;

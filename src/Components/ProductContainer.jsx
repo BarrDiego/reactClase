@@ -1,65 +1,69 @@
-import React, {useEffect, useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import Cart from './Cart/Cart'
-import img01 from '../assets/CartImg/rick01.jpg'
-import img02 from '../assets/CartImg/rick02.jpg'
-import img03 from '../assets/CartImg/rick03.jpg'
-
 
 const ProductContainer = () => {
 
-  const productos = [
+  const superheros = [
     {
       id:1,
-      img:img01,
-      titulo:'Rick Winkle',
-      descripcion:'Rick Sanchez guiñando el ojo',
-      temporada: 'season01'      
+      img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Superman_S_symbol.svg/1200px-Superman_S_symbol.svg.png',
+      titulo:'Super-Man',
+      descripcion:'DC Super Heroe',
+      comics:'DC'
     },
     {
       id:2,
-      img:img02,
-      titulo:'Rick Smile',
-      descripcion:'Rick Sanchez sonriendo',
-      temporada: 'season02'
+      img:'https://i0.wp.com/eltallerdehector.com/wp-content/uploads/2022/06/3e5a7-logo-de-batman-png-free.png?resize=700%2C700&ssl=1',
+      titulo:'Batman',
+      descripcion:'DC Super Heroe',
+      comics:'DC'
     },
     {
       id:3,
-      img:img03,
-      titulo:'Rick Relax',
-      descripcion:'Rick Sanchez relajando',
-      temporada: 'season03'
+      img:'https://i.pinimg.com/originals/60/af/20/60af2077698a6a57fd819390d502da09.jpg',
+      titulo:'IronMan',
+      descripcion:'Marvel Super Heroe',
+      comics:'Marvel'
     }
-    ]
-    const [datos, setDatos] = useState(productos);
-    const [click, setClick] = useState(false);
-    useEffect(() => {
-      //cuando el componente esta listo (Mount)
-      //first
-      console.log('se cargo el componente');
-    
-      return () => {
-        //cuando el componente se destruye (Dismount)
-        //second
-        console.log('se destruye el componente');
-      }
-      //en lso corchetes, es el change obliga el re-render (Change)
-    }, [{/*third*/}])
-    console.log('se ejecuto el console.log, pero componente no cargo');
-    
+  ]
+
+  // break 21:50 hs
+
+  const [datos,setDatos] = useState(superheros)
+  const [click, setClick] = useState(false)
+ // const [show, setShow] = useState(false)
+
+  useEffect(() => {
+   // cuando el componente esta listo (Mount)
+    // GET => 
+    console.log('se cargo  completamente el componente')
+    return () => {
+      // Dismount // destruccion 
+    }
+    // en los corchetes , es el change (Change) los cambios
+  }, [])
+
+
+  // input: nombre => setImputValue(e.target.value) 
   
+  
+
+ console.log('se ejecuto este console.log , pero el html no cargo')
+
   return (
     <>
-      {productos.map(({id,img,titulo,descripcion,temporada})=>(
-        <Cart 
-        key={id} 
-        img={img}
-        title={titulo}
-        descripcion = {descripcion}
-        buttonName={'Mas Info'}
-        buttonClassName = {temporada == 'season01' ? 'btn btn-primary' : 'btn btn-outline-success'}
+     {datos.map(({id,img,titulo,descripcion,comics}) => (
+      <Cart 
+          key={id} 
+          img={img}
+          title={titulo}
+          descripcion={descripcion}
+          buttonName={'Mas Info'}
+          buttonClassName={comics === 'DC' ? 'btn btn-outline-warning' : 'btn btn-danger'} 
+        
         />
-      ))}
-      <Cart/>
+     ))}
+     <button onClick={()=> setClick(!click)}>Click</button>
     </>
   )
 }

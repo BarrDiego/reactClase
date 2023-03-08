@@ -1,30 +1,54 @@
+import { useState } from 'react';
 import './App.css';
-import Counter from './Components/Counter/Counter';
-import { Formulario } from './Components/Forms/Formulario';
+import { datosLogin, datosLoginInputs, datosRegistro, datosRegistroInputs } from './Components/Formulario/config';
+import Formulario from './Components/Formulario/Formulario';
+import Navbar from './Components/Navbar/Navbar';
+import Rutas from './routes/Rutas';
 
-import Productos from './views/Productos';
 function App() {
-  
-  return (
-    <div className="App text-danger">
-      <Counter initialNumber = {0}/>
-      <Counter initialNumber = {10}/>
-      <Counter initialNumber = {200}/>
-      <Productos/>
-      <Formulario/>
-    </div>
 
-    /*
-    TODO:
-      implementar el formulario
-     
-    
-    */
-   
-    
+  const [showForms,setShowForms] = useState(false)
+
+  const [showLogin,setShowLogin] = useState(false)
+
+  const handleSubmit = (e,data) => {
+    e.preventDefault();
+    console.log(data)
+  }
+
+  // ################## Uplifting  ####################################
+
+  const [enviado, setEnviado ] = useState(false);
+  const [text, setText] = useState('')
+  const toggleEnviado = () => setEnviado(!enviado)
+  const handleSetText  = (text) => setText(text)
+
+  // ################## Uplifting  ####################################
+
+
+
+  return (
+    <div className="">
+      <Rutas/>
+    </div>
   );
 }
 
 export default App;
-
-// TODO: CONTINUAR MINUTO 50:00
+/*
+UPLIFTING
+<h1>{text || 'Aca va un texto que sera tipiado desde Form'}</h1>
+      <Navbar navbar_items={["Item","Home","Link","Disabled","Tomas"]}/>
+      <button onClick={() => setShowForms(!showForms)}>{ showForms ? 'Ocultar' : 'Mostrar'}</button>
+      <Formulario
+        onSubmit={handleSubmit} 
+        formTitle={ !showLogin ? 'Register' : 'Login'} 
+        initialState={!showLogin ? datosRegistro : datosLogin} 
+        inputs={!showLogin ? datosRegistroInputs : datosLoginInputs}
+        toggleEnviado={toggleEnviado}
+        handleSetText={handleSetText}
+      />
+      <button onClick={() => setShowLogin(!showLogin)}> 
+        {!showLogin ? 'Ir a Login' : 'Ir a Registro'}
+      </button>
+*/
